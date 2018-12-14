@@ -1,7 +1,7 @@
 class Game {
 	constructor(){
 		this.missed = 0;
-		this.phrases = ['piece of cake', 'donut worry', 'pie in the sky', 'who ate my cookies']
+		this.phrases = ['piece of cake', 'donut worry', 'pie in the sky']
 	
 	}
 
@@ -10,10 +10,10 @@ class Game {
 	*/
 	getRandomPhrase(){
 
-		game.phrases
-		const number = Math.floor(Math.random() * 4);
+		this.phrases
+		const number = Math.floor(Math.random() * 3);		
 		const randomPhrase = this.phrases[number];
-		const source = this.phrases[number].source;
+		
 
 		return randomPhrase
 	}
@@ -71,22 +71,29 @@ class Game {
 
 			for(let i = 0; i < letter.length; i++){
 
-				if(letter.className === 'show'){
+				if(letter[i].className === 'show'){
 					correct += 0
+
 				}
-				else if(letter.className === 'hide space'){
+				else if(letter[i].className === 'hide space'){
 					correct += 0
+					console.log(correct)
 				}
  
 				else{
 					correct -= 1
-				}
-			}
-
-			if(correct === 0 ){
-				this.gameOver('win')
+					console.log(correct)
+				
 			}
 		}
+
+			if(correct === 0 ){
+				console.log(correct)
+				this.gameOver('win')
+			
+		}
+	
+}
 
 	/*
 		The gameOver Method displays a message if the player wins 
@@ -109,7 +116,7 @@ class Game {
 	*/
 
 	startGame(){
-		this.phrase = new Phrase(this.getRandomPhrase());		
+		this.phrase = new Phrase();		
 		this.phrase.addPhraseToDisplay()
 		
 	}

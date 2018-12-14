@@ -4,7 +4,7 @@ class Phrase {
 	}
 
 	/*
-		the addPhraseToDisplay Method takes the random phrase selected, and adds it to the display
+		The addPhraseToDisplay Method takes the random phrase selected, and adds it to the display
 	*/
 
 	addPhraseToDisplay(){
@@ -13,17 +13,23 @@ class Phrase {
 		const ul = document.createElement('ul')
 		const location = document.getElementById('phrase').appendChild(ul);
 		const li = document.createElement('li');
+		
+		console.log(this.phrase.length)
+
+
 			for(let i = 0; i < this.phrase.length; i++){
-					
+				const li = document.createElement('li')
 				if(this.phrase[i].match(/\s/)){
 					li.className = 'hide space'
 				} else if(this.phrase[i].match(/[a-z]/)){
 					li.className = 'hide letter ' + this.phrase[i];
-					li.innerHTML = this.phrase[i] 
+					li.innerHTML = this.phrase[i]
 				}
 					
 					ul.appendChild(li)
+					
 				}
+
 	}
 
 	/*
