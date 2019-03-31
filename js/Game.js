@@ -55,7 +55,7 @@ class Game {
 			this.gameOver('lose')
 		} else {
 			for(let i = 0; i < this.missed; i++){
-				lives[i].src="../oop/images/lostHeart.png"
+				lives[i].src="../images/lostHeart.png"
 			}
 		}
 	}
